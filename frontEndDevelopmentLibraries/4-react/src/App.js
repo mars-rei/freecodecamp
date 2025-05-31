@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 function App() {
   const JSX = (
@@ -145,9 +145,7 @@ function App() {
       super(props);
     }
     render() {
-      { /* Change code below this line */ }
       return <Items quantity={10}/>
-      { /* Change code above this line */ }
     }
   };
 
@@ -181,6 +179,26 @@ function App() {
   };
 
 
+  class CampSite extends React.Component {
+    constructor(props) {
+      super(props);
+    }
+    render() {
+      return (
+        <div>
+          <Camper/>
+        </div>
+      );
+    }
+  };
+
+  const Camper = props => <p>{props.name}</p>;
+
+  Camper.defaultProps = { name : 'CamperBot' };
+
+  Camper.propTypes = { name : PropTypes.string.isRequired };
+
+
 
   return (
     <div>
@@ -198,6 +216,8 @@ function App() {
       <ShoppingCart />
 
       <App />
+
+      <CampSite />
     </div>
   );
 }
