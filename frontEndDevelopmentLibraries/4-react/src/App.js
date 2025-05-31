@@ -499,6 +499,32 @@ function App() {
   };
 
 
+  // lesson 33
+  class ComponentDidMount extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        activeUsers: null
+      };
+    }
+    // API
+    componentDidMount() {
+      setTimeout(() => {
+        this.setState({
+          activeUsers: 1273
+        });
+      }, 2500);
+    }
+    render() {
+      return (
+        <div>
+          <h1>Active Users: {this.state.activeUsers}</h1>
+        </div>
+      );
+    }
+  }
+
+
   return (
     <div>
       {JSX}
@@ -537,6 +563,8 @@ function App() {
       <MyApp />
 
       <PassCallbackProps />
+
+      <ComponentDidMount />
     </div>
   );
 }
