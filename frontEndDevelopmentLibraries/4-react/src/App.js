@@ -58,9 +58,7 @@ function App() {
   const Fruits = () => {
     return (
       <div>
-        { /* Change code below this line */ }
         <TypesOfFruit />
-        { /* Change code above this line */ }
       </div>
     );
   };
@@ -74,9 +72,7 @@ function App() {
       return (
         <div>
           <h1>Types of Food:</h1>
-          { /* Change code below this line */ }
           <Fruits />
-          { /* Change code above this line */ }
         </div>
       );
     }
@@ -86,9 +82,7 @@ function App() {
   const CurrentDate = (props) => {
     return (
       <div>
-        { /* Change code below this line */ }
         <p>The current date is: {props.date}</p>
-        { /* Change code above this line */ }
       </div>
     );
   };
@@ -101,9 +95,7 @@ function App() {
       return (
         <div>
           <h3>What date is it?</h3>
-          { /* Change code below this line */ }
           <CurrentDate date={Date()} />
-          { /* Change code above this line */ }
         </div>
       );
     }
@@ -202,11 +194,9 @@ function App() {
   class StatefulComponent extends React.Component {
     constructor(props) {
       super(props);
-      // Only change code below this line
       this.state = {
         firstName : 'Mars'
       }
-      // Only change code above this line
     }
     render() {
       return (
@@ -217,6 +207,23 @@ function App() {
     }
   };
 
+
+  class RenderState extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        name: 'freeCodeCamp'
+      }
+    }
+    render() {
+      const name = this.state.name;
+      return (
+        <div>
+          <h1>{name}</h1>
+        </div>
+      );
+    }
+  };
 
 
   return (
@@ -239,6 +246,8 @@ function App() {
       <CampSite />
 
       <StatefulComponent />
+
+      <RenderState />
     </div>
   );
 }
