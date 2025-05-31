@@ -574,7 +574,6 @@ function App() {
     if (nextProps.value % 2 == 0 ) {
       return true;
     }
-    // Change code above this line
   }
   componentDidUpdate() {
     console.log('Component re-rendered.');
@@ -606,6 +605,33 @@ class Controller extends React.Component {
     );
   }
 }
+
+
+// lesson 36
+class Colorful extends React.Component {
+  render() {
+    return (
+      <div style={{color: "red", fontSize: "72px"}}
+      >
+      Big Red</div>
+    );
+  }
+};
+
+
+// lesson 37
+const styles = {
+  color: "purple",
+  fontSize: 40,
+  border: "2px solid purple"
+}
+class Colorful2 extends React.Component {
+  render() {
+    return (
+      <div style={styles}>Style Me!</div>
+    );
+  }
+};
 
   return (
     <div>
@@ -651,6 +677,10 @@ class Controller extends React.Component {
       <EventListeners />
 
       <Controller />
+
+      <Colorful />
+
+      <Colorful2 />
     </div>
   );
 }
