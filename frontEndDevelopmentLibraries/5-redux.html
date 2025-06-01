@@ -11,9 +11,6 @@
 
 <body>
     <!-- lesson 1-->
-    <!-- code added to display state -->
-    <h1>Lesson 1 - store1: <span id="store-state1"></span></h1>
-
     <script>
         const reducer = (state = 5) => {
             return state;
@@ -30,18 +27,12 @@
 
 
     <!-- lesson 2 -->
-    <!-- code added to display state -->
-    <h1>Lesson 2 - store2: <span id="store-state2"></span></h1>
-
     <script>
-        const store2 = Redux.createStore(
+        const store = Redux.createStore(
             (state = 5) => state
         );
 
-        let currentState = store2.getState()
-
-        // code added to display state
-        document.getElementById('store-state2').textContent = store1.getState();
+        let currentState = store.getState()
     </script>
 
 
@@ -60,6 +51,24 @@
         function actionCreator() {
             return action.type;
         }
+    </script>
+
+
+    <!-- lesson 5 -->
+    <!-- dispatch an action event -->
+    <script>
+        const store2 = Redux.createStore(
+            (state = {login: false}) => state
+        );
+
+        const loginAction = () => {
+        return {
+            type: 'LOGIN'
+        }
+        };
+
+        store2.dispatch(loginAction());
+        store2.dispatch({type: 'LOGIN'});
     </script>
     
 </body>
