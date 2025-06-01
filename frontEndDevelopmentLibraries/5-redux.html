@@ -11,7 +11,8 @@
 
 <body>
     <!-- lesson 1-->
-    <h1>Lesson 1 - store: <span id="store-state"></span></h1>
+    <!-- code added to display state -->
+    <h1>Lesson 1 - store1: <span id="store-state1"></span></h1>
 
     <script>
         const reducer = (state = 5) => {
@@ -21,11 +22,28 @@
         // Redux methods are available from a Redux object
         // For example: Redux.createStore()
         // Define the store here:
-        let store = Redux.createStore(reducer);
+        let store1 = Redux.createStore(reducer);
 
         // code added to display state
-        document.getElementById('store-state').textContent = store.getState();
+        document.getElementById('store-state1').textContent = store1.getState();
     </script>
+
+
+    <!-- lesson 2 -->
+    <!-- code added to display state -->
+    <h1>Lesson 2 - store2: <span id="store-state2"></span></h1>
+
+    <script>
+        const store2 = Redux.createStore(
+            (state = 5) => state
+        );
+
+        let currentState = store2.getState()
+
+        // code added to display state
+        document.getElementById('store-state2').textContent = store1.getState();
+    </script>
+    
 </body>
 
 </html>
