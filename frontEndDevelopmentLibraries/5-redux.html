@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Redux core library -->
+    <script src="https://cdn.jsdelivr.net/npm/redux@4.2.1/dist/redux.min.js"></script>
+</head>
+
+<body>
+    <!-- lesson 1-->
+    <h1>Lesson 1 - store: <span id="store-state"></span></h1>
+
+    <script>
+        const reducer = (state = 5) => {
+            return state;
+        }
+
+        // Redux methods are available from a Redux object
+        // For example: Redux.createStore()
+        // Define the store here:
+        let store = Redux.createStore(reducer);
+
+        // code added to display state
+        document.getElementById('store-state').textContent = store.getState();
+    </script>
+</body>
+
+</html>
