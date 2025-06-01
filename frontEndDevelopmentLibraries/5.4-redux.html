@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Redux core library -->
+    <script src="https://cdn.jsdelivr.net/npm/redux@4.2.1/dist/redux.min.js"></script>
+</head>
+
+<body>
+    <!-- lesson 9 -->
+    <!-- register a store listener -->
+    <script>
+        const ADD = 'ADD';
+
+        const reducer = (state = 0, action) => {
+            switch(action.type) {
+                case ADD:
+                    return state + 1;
+                default:
+                    return state;
+            }
+        };
+
+        const store = Redux.createStore(reducer);
+
+        // Global count variable:
+        let count = 0;
+
+        const add = () => count++;
+        store.subscribe(add);
+
+        store.dispatch({type: ADD});
+        console.log(count);
+        store.dispatch({type: ADD});
+        console.log(count);
+        store.dispatch({type: ADD});
+        console.log(count);
+    </script>
+    
+</body>
+
+</html>
