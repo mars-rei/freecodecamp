@@ -70,6 +70,33 @@
         store2.dispatch(loginAction());
         store2.dispatch({type: 'LOGIN'});
     </script>
+
+
+    <!-- lesson 6 -->
+    <!-- handle an action in the store -->
+    <script>
+        const defaultState = {
+            login: false
+        };
+
+        const reducer2 = (state = defaultState, action) => {
+        if (action.type == 'LOGIN') {
+            return {
+                login: true
+            }
+        } else {
+            return state;
+        }
+        };
+
+        const store3 = Redux.createStore(reducer2);
+
+        const loginAction2 = () => {
+            return {
+                type: 'LOGIN'
+            }
+        };
+    </script>
     
 </body>
 
