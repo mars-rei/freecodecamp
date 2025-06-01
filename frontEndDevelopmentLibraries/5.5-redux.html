@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Redux core library -->
+    <script src="https://cdn.jsdelivr.net/npm/redux@4.2.1/dist/redux.min.js"></script>
+</head>
+
+<body>
+    <!-- lesson 10 -->
+    <!-- combine multiple reducers -->
+    <script>
+        const INCREMENT = 'INCREMENT';
+        const DECREMENT = 'DECREMENT';
+
+        const counterReducer = (state = 0, action) => {
+            switch(action.type) {
+                case INCREMENT:
+                    return state + 1;
+                case DECREMENT:
+                    return state - 1;
+                default:
+                    return state;
+            }
+        };
+
+        const LOGIN = 'LOGIN';
+        const LOGOUT = 'LOGOUT';
+
+        const authReducer = (state = {authenticated: false}, action) => {
+        switch(action.type) {
+            case LOGIN:
+                return {
+                    authenticated: true
+                }
+            case LOGOUT:
+                return {
+                    authenticated: false
+                }
+            default:
+                return state;
+        }
+        };
+
+        const rootReducer = Redux.combineReducers({
+            count: counterReducer,
+            auth: authReducer
+        });
+
+        const store = Redux.createStore(rootReducer);
+    </script>
+    
+</body>
+
+</html>
