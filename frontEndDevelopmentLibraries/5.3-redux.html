@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Redux core library -->
+    <script src="https://cdn.jsdelivr.net/npm/redux@4.2.1/dist/redux.min.js"></script>
+</head>
+
+<body>
+    <!-- lesson 8 -->
+    <!-- use const for action types -->
+    <script>
+        const LOGIN = 'LOGIN';
+        const LOGOUT = 'LOGOUT';
+
+        const defaultState = {
+            authenticated: false
+        };
+
+        const authReducer = (state = defaultState, action) => {
+
+        switch (action.type) {
+            case LOGIN: 
+                return {
+                    authenticated: true
+                }
+            case LOGOUT: 
+                return {
+                    authenticated: false
+                }
+
+            default:
+                return state;
+
+        }
+
+        };
+
+        const store = Redux.createStore(authReducer);
+
+        const loginUser = () => {
+            return {
+                type: LOGIN
+            }
+        };
+
+        const logoutUser = () => {
+            return {
+                type: LOGOUT
+            }
+        };
+    </script>
+    
+</body>
+
+</html>
