@@ -1,0 +1,36 @@
+body {
+    background-color: olive;
+}
+
+#quote-box {
+    background-color: blanchedalmond;
+    width: 500px;
+}
+
+#text {
+    color: olive;
+}
+
+#author {
+    color: olive;
+}
+
+.btn-primary {
+    background-color: olive;
+    color: blanchedalmond;
+    border: olive;
+}
+
+.btn-primary:hover {
+    background-color: olivedrab;
+    border: olivedrab;
+}
+
+.btn-primary:active {
+    background-color: olivedrab;
+    border: olivedrab;
+}
+
+#coder a {
+    color: blanchedalmond;
+}
