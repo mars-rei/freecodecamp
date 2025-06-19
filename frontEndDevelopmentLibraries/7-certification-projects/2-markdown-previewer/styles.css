@@ -1,0 +1,31 @@
+body {
+    background-color: olive;
+}
+
+#editor {
+    background-color: blanchedalmond;
+    color: olive;
+    border-color: olive;
+}
+
+::-webkit-resizer {
+  border-color: olive;
+}
+
+h2 {
+    color: olive;
+}
+
+.container {
+    background-color: blanchedalmond;
+    color: olive;
+}
+
+#preview {
+    border-color: olive !important;
+}
+
+#preview img {
+    max-width: 100%;
+    height: auto;
+}
